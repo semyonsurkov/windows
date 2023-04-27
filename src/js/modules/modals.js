@@ -1,18 +1,18 @@
 const modals = () => {
-  function bindModal(triggersSelector, modalSelector, closeSelector) {
+  const bindModal = (triggersSelector, modalSelector, closeSelector) => {
     const triggers = document.querySelectorAll(triggersSelector);
     const modal = document.querySelector(modalSelector);
     const close = document.querySelector(closeSelector);
 
-    function closeModal() {
+    const closeModal = () => {
       modal.style.display = 'none';
       document.body.style.overflow = '';
-    }
+    };
 
-    function openModal() {
+    const openModal = () => {
       modal.style.display = 'block';
       document.body.style.overflow = 'hidden';
-    }
+    };
 
     triggers.forEach((trigger) => {
       trigger.addEventListener('click', (e) => {
@@ -36,7 +36,7 @@ const modals = () => {
         closeModal();
       }
     });
-  }
+  };
 
   const showModalByTime = (selector, time) => {
     setTimeout(() => {
