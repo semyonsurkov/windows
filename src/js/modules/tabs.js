@@ -9,12 +9,12 @@ export const tabs = ({
   const contents = document.querySelectorAll(contentSelector);
 
   const hideTabContent = () => {
-    contents.forEach((trigger) => {
-      trigger.style.display = 'none';
+    contents.forEach((content) => {
+      content.style.display = 'none';
     });
 
-    tabs.forEach((trigger) => {
-      trigger.classList.remove(activeClass);
+    tabs.forEach((tab) => {
+      tab.classList.remove(activeClass);
     });
   };
 
@@ -33,8 +33,8 @@ export const tabs = ({
       (target.classList.contains(tabSelector.replace(/\./, '')) ||
         target.parentNode.classList.contains(tabSelector.replace(/\./, '')))
     ) {
-      tabs.forEach((trigger, i) => {
-        if (target == trigger || target.parentNode == trigger) {
+      tabs.forEach((tab, i) => {
+        if (target == tab || target.parentNode == tab) {
           hideTabContent();
           showTabContent(i);
         }
@@ -42,4 +42,3 @@ export const tabs = ({
     }
   });
 };
-
