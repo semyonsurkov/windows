@@ -1,21 +1,26 @@
-const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
+const tabs = ({
+  headerSelector,
+  tabSelector,
+  contentSelector,
+  activeClass,
+}) => {
   const header = document.querySelector(headerSelector);
-  const tab = document.querySelectorAll(tabSelector);
-  const content = document.querySelectorAll(contentSelector);
+  const tabs = document.querySelectorAll(tabSelector);
+  const contents = document.querySelectorAll(contentSelector);
 
   const hideTabContent = () => {
-    content.forEach((item) => {
-      item.style.display = 'none';
+    contents.forEach((trigger) => {
+      trigger.style.display = 'none';
     });
 
-    tab.forEach((item) => {
-      item.classList.remove(activeClass);
+    tabs.forEach((trigger) => {
+      trigger.classList.remove(activeClass);
     });
   };
 
   const showTabContent = (i = 0) => {
-    content[i].style.display = 'block';
-    tab[i].classList.add(activeClass);
+    contents[i].style.display = 'block';
+    tabs[i].classList.add(activeClass);
   };
 
   hideTabContent();
@@ -28,8 +33,8 @@ const tabs = (headerSelector, tabSelector, contentSelector, activeClass) => {
       (target.classList.contains(tabSelector.replace(/\./, '')) ||
         target.parentNode.classList.contains(tabSelector.replace(/\./, '')))
     ) {
-      tab.forEach((item, i) => {
-        if (target == item || target.parentNode == item) {
+      tabs.forEach((trigger, i) => {
+        if (target == trigger || target.parentNode == trigger) {
           hideTabContent();
           showTabContent(i);
         }
