@@ -1,4 +1,4 @@
-const tabs = ({
+export const tabs = ({
   headerSelector,
   tabSelector,
   contentSelector,
@@ -43,4 +43,3 @@ const tabs = ({
   });
 };
 
-export default tabs;
