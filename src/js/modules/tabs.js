@@ -26,6 +26,24 @@ export const tabs = ({
   hideTabContent();
   showTabContent();
 
+  header.addEventListener('keydown', (e) => {
+    const target = e.target;
+    if (
+      target &&
+      (target.classList.contains(tabSelector.replace(/\./, '')) ||
+        target.parentNode.classList.contains(tabSelector.replace(/\./, '')))
+    ) {
+      if (e.key === 'Enter') {
+        tabs.forEach((tab, i) => {
+          if (target == tab || target.parentNode == tab) {
+            hideTabContent();
+            showTabContent(i);
+          }
+        });
+      }
+    }
+  });
+
   header.addEventListener('click', (e) => {
     const target = e.target;
     if (
