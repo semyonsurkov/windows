@@ -23,8 +23,19 @@ export const tabs = ({
     tabs[i].classList.add(activeClass);
   };
 
+  const switchTab = (i) => {
+    hideTabContent();
+    showTabContent(i);
+  };
+
   hideTabContent();
   showTabContent();
+
+  tabs.forEach((tab, i) => {
+    tab.addEventListener('click', () => {
+      switchTab(i);
+    });
+  });
 
   header.addEventListener('keydown', (e) => {
     const target = e.target;
@@ -36,27 +47,10 @@ export const tabs = ({
       if (e.key === 'Enter') {
         tabs.forEach((tab, i) => {
           if (target == tab || target.parentNode == tab) {
-            hideTabContent();
-            showTabContent(i);
+            switchTab(i);
           }
         });
       }
-    }
-  });
-
-  header.addEventListener('click', (e) => {
-    const target = e.target;
-    if (
-      target &&
-      (target.classList.contains(tabSelector.replace(/\./, '')) ||
-        target.parentNode.classList.contains(tabSelector.replace(/\./, '')))
-    ) {
-      tabs.forEach((tab, i) => {
-        if (target == tab || target.parentNode == tab) {
-          hideTabContent();
-          showTabContent(i);
-        }
-      });
     }
   });
 };
