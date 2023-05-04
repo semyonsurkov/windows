@@ -15,17 +15,20 @@ export const forms = () => {
     failure: 'Данные не отправлены',
   };
 
-  const postData = async (url, data) => {
+  const postData = async (url, formData) => {
+    const object = {};
+    formData.forEach((value, key) => object[key] = value);
+    const body = JSON.stringify(object);
     document.querySelector('.status').textContent = message.loading;
-    let result = await fetch(url, {
+    const result = await fetch(url, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify(data),
+      body,
     });
 
-    return await result.json();
+    return await result.text();
   };
 
   const clearInputs = () => {
@@ -38,7 +41,7 @@ export const forms = () => {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
 
-      let statusMessage = document.createElement('div');
+      const statusMessage = document.createElement('div');
       statusMessage.classList.add('status');
       form.appendChild(statusMessage);
 
