@@ -19,10 +19,13 @@ export const forms = () => {
     document.querySelector('.status').textContent = message.loading;
     let result = await fetch(url, {
       method: 'POST',
-      body: data,
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
     });
 
-    return await result.text();
+    return await result.json();
   };
 
   const clearInputs = () => {
@@ -41,7 +44,7 @@ export const forms = () => {
 
       const formData = new FormData(form);
 
-      postData('assets/server.php', formData)
+      postData('https://simple-server-cumz.onrender.com/api/data', formData)
         .then((result) => {
           console.log(result);
           statusMessage.textContent = message.success;
