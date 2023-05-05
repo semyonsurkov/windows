@@ -1,8 +1,12 @@
 import './slider';
-import { modals, tabs, forms } from './modules';
+import { modals, tabs, forms, changeModalState } from './modules';
 
 window.addEventListener('DOMContentLoaded', () => {
   'use strict';
+
+  const modalState = {};
+
+  changeModalState(modalState);
   modals();
   tabs({
     headerSelector: '.glazing_slider',
@@ -23,5 +27,5 @@ window.addEventListener('DOMContentLoaded', () => {
     activeClass: 'do_image_more',
     display: 'inline-block',
   });
-  forms();
+  forms(modalState);
 });
