@@ -3,6 +3,7 @@ export const tabs = ({
   tabSelector,
   contentSelector,
   activeClass,
+  display = 'block',
 }) => {
   const header = document.querySelector(headerSelector);
   const tabs = document.querySelectorAll(tabSelector);
@@ -19,7 +20,7 @@ export const tabs = ({
   };
 
   const showTabContent = (i = 0) => {
-    contents[i].style.display = 'block';
+    contents[i].style.display = display;
     tabs[i].classList.add(activeClass);
   };
 
