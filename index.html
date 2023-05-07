@@ -913,36 +913,35 @@
     </div>
   </div>
 
-  <div class="popup_calc_profile" data-modal>
-    <div class="popup_dialog">
-      <div class="popup_calc_profile_content text-center">
-        <button type="button" class="popup_calc_profile_close"><strong>&times;</strong></button>
-        <h2>Калькулятор</h2>
-        <h3>Выберите тип остекления <br>и его профиль</h3>
-        <select class="form-control" name="view" id="view_type">
-          <option value="tree">Деревянное остекление</option>
-          <option value="aluminum">Алюминиевое остекление</option>
-          <option value="plastic">Остекление пластиковыми рамами</option>
-          <option value="french">Панорамное остекление</option>
-          <option value="overhang">Остекление с выносом</option>
-        </select>
+<div class="popup_calc_profile" data-modal>
+  <div class="popup_dialog">
+    <div class="popup_calc_profile_content text-center">
+      <button type="button" class="popup_calc_profile_close"><strong>&times;</strong></button>
+      <h2>Калькулятор</h2>
+      <h3>Выберите тип остекления <br>и его профиль</h3>
+      <select class="form-control" name="view" id="view_type">
+        <option value="tree">Деревянное остекление</option>
+        <option value="aluminum">Алюминиевое остекление</option>
+        <option value="plastic">Остекление пластиковыми рамами</option>
+        <option value="french">Панорамное остекление</option>
+        <option value="overhang">Остекление с выносом</option>
+      </select>
+      <label>
         <img src="./src/assets/img/modal_calc/icon_cold.png" alt="">
-        <label>
-          <input class="radio" type="radio" name="radio-test" value="Холодное" tabindex="0">
-          <span class="radio-custom" id="cold"></span>
-          <span class="label">Холодное</span>
-        </label>
+        <input class="radio" type="radio" name="radio-test" value="Холодное">
+        <span class="radio-custom" id="cold" tabindex="0"></span>
+        <span class="label" tabindex="0">Холодное</span>
+      </label>
+      <label>
         <img src="./src/assets/img/modal_calc/icon_warm.png" alt="">
-        <label>
-          <input class="radio" type="radio" name="radio-test" value="Теплое" tabindex="0">
-          <span class="radio-custom" id="warm"></span>
-          <span class="label">Теплое</span>
-        </label>
-
-        <button class="button popup_calc_profile_button">Далее</button>
-      </div>
+        <input class="radio" type="radio" name="radio-test" value="Теплое">
+        <span class="radio-custom" id="warm" tabindex="0"></span>
+        <span class="label" tabindex="0">Теплое</span>
+      </label>
+      <button class="button popup_calc_profile_button" tabindex="0">Далее</button>
     </div>
   </div>
+</div>
 
   <div class="popup_calc_end" data-modal>
     <div class="popup_dialog">
