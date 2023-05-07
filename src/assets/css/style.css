@@ -1,9 +1,16 @@
 /*Fonts Family*/
 /*Colors*/
 /*Basic settings*/
-:focus-visible {
+a:focus,
+button:focus,
+input:focus,
+textarea:focus {
   outline: none;
-  box-shadow: 0 0 1px 1px black;
+  box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px #3a97f9;
+}
+
+.popup_calc_profile_content .radio:focus + .radio-custom {
+  box-shadow: 0 0 0 2px #ffffff, 0 0 3px 5px #3a97f9;
 }
 
 html {
@@ -1060,7 +1067,7 @@ textarea:focus {
 }
 
 .popup_calc_profile_content .radio {
-  display: none;
+  visibility: hidden;
 }
 
 .popup_calc_profile_content .radio-custom {
