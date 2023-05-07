@@ -1070,6 +1070,15 @@ textarea:focus {
   visibility: hidden;
 }
 
+.sr-only {
+  position: absolute !important;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap;
+}
+
 .popup_calc_profile_content .radio-custom {
   position: relative;
   width: 22px;
