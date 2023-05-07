@@ -1,6 +1,11 @@
 /*Fonts Family*/
 /*Colors*/
 /*Basic settings*/
+:focus-visible {
+  outline: none;
+  box-shadow: 0 0 1px 1px black;
+}
+
 html {
   /* overflow-x: hidden; */
   font-size: 10px;
@@ -1054,11 +1059,11 @@ textarea:focus {
   outline: none;
 }
 
-.popup_calc_profile_content .checkbox {
+.popup_calc_profile_content .radio {
   display: none;
 }
 
-.popup_calc_profile_content .checkbox-custom {
+.popup_calc_profile_content .radio-custom {
   position: relative;
   width: 22px;
   height: 22px;
@@ -1066,13 +1071,13 @@ textarea:focus {
   border-radius: 3px;
 }
 
-.popup_calc_profile_content .checkbox-custom,
+.popup_calc_profile_content .radio-custom,
 .popup_calc_profile_content .label {
   display: inline-block;
   vertical-align: middle;
 }
 
-.popup_calc_profile_content .checkbox:checked + .checkbox-custom::before {
+.popup_calc_profile_content .radio:checked + .radio-custom::before {
   content: '';
   display: block;
   position: absolute;
@@ -1082,7 +1087,7 @@ textarea:focus {
   left: 0;
 }
 
-.checkbox-custom[id='cold']::before {
+.radio-custom[id='cold']::before {
   background: url(../img/modal_calc/check.png) center center no-repeat;
 }
 
@@ -1090,7 +1095,7 @@ textarea:focus {
   background: url();
 }
 
-.checkbox-custom[id='warm']::before {
+.radio-custom[id='warm']::before {
   background: url(../img/modal_calc/check_warm.png) center center no-repeat;
 }
 

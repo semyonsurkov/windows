@@ -18,19 +18,20 @@ export const changeModalState = (state) => {
             state[property] = i;
             break;
           case 'INPUT':
-            if (window.getAttribute('type') === 'checkbox') {
-              i === 0
-                ? (state[property] = 'Холодное')
-                : (state[property] = 'Тёплое');
-              element.forEach((box, j) => {
-                box.checked = false;
-                if (i == j) {
-                  box.checked = true;
-                }
+            const radioInputs = document.querySelectorAll('.radio');
+            const localState = {};
+
+            radioInputs.forEach((input) => {
+              input.addEventListener('change', () => {
+                localState[input.name] = input.value;
               });
-            } else {
-              state[property] = window.value;
-            }
+            });
+
+            localState.radio = document.querySelector(
+              'input[name="radio"]:checked'
+            ).value;
+
+            Object.assign(state, localState);
             break;
           case 'SELECT':
             state[property] = window.value;
