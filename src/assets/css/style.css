@@ -1066,16 +1066,17 @@ textarea:focus {
   outline: none;
 }
 
-.popup_calc_profile_content .radio {
-  visibility: hidden;
-}
-
 .sr-only {
-  position: absolute !important;
+  border: 0;
+  clip: rect(0 0 0 0);
+  -webkit-clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
+  clip-path: polygon(0px 0px, 0px 0px, 0px 0px);
   height: 1px;
-  width: 1px;
+  margin: -1px;
   overflow: hidden;
-  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  position: absolute;
+  width: 1px;
   white-space: nowrap;
 }
 
