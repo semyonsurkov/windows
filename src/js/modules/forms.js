@@ -1,13 +1,10 @@
-export const forms = () => {
+import { checkNumInputs } from './index.js';
+
+export const forms = (state) => {
   const forms = document.querySelectorAll('form');
   const inputs = document.querySelectorAll('input');
-  const phoneInputs = document.querySelectorAll('input[name="user_phone"]');
 
-  phoneInputs.forEach((input) => {
-    input.addEventListener('input', () => {
-      input.value = input.value.replace(/\D/, '');
-    });
-  });
+  checkNumInputs('input[name="user_phone"]');
 
   const message = {
     loading: 'Загрузка...',
@@ -17,7 +14,7 @@ export const forms = () => {
 
   const postData = async (url, formData) => {
     const object = {};
-    formData.forEach((value, key) => object[key] = value);
+    formData.forEach((value, key) => (object[key] = value));
     const body = JSON.stringify(object);
     document.querySelector('.status').textContent = message.loading;
     const result = await fetch(url, {
@@ -46,6 +43,11 @@ export const forms = () => {
       form.appendChild(statusMessage);
 
       const formData = new FormData(form);
+      if (form.getAttribute('data-calc') === 'end') {
+        for (let key in state) {
+          formData.append(key, state[key]); 
+        }
+      }
 
       postData('https://simple-server-cumz.onrender.com/api/data', formData)
         .then((result) => {
