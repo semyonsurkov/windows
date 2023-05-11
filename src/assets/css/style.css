@@ -890,6 +890,14 @@ textarea:focus {
   height: 60vh;
 }
 
+@media (max-width: 767px) {
+  .popup > img {
+    width: 40vh;
+    height: 40vh;
+  }
+}
+
+
 .myimage {
   position: fixed;
   top: 0;

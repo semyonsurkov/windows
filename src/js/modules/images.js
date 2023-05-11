@@ -17,7 +17,7 @@ export const images = () => {
 
     let target = event.target;
 
-    if (target && target.classList.contains('preview')) {
+    if (target?.classList.contains('preview')) {
       imgPopup.style.display = 'flex';
       const path = target.parentNode.getAttribute('href');
       bigImage.setAttribute('src', path);
