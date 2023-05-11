@@ -1,7 +1,6 @@
 /*Fonts Family*/
 /*Colors*/
 /*Basic settings*/
-a:focus,
 button:focus,
 input:focus,
 textarea:focus {
@@ -884,6 +883,18 @@ textarea:focus {
   height: 100%;
   z-index: 9;
   background-color: rgba(0, 0, 0, 0.5);
+}
+
+.popup > img {
+  width: 60vh;
+  height: 60vh;
+}
+
+@media (max-width: 767px) {
+  .popup > img {
+    width: 40vh;
+    height: 40vh;
+  }
 }
 
 .myimage {
